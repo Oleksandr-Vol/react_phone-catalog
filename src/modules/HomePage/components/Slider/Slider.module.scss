@@ -1,0 +1,26 @@
+.image {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.indicators_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 66px;
+}
+
+.indicator {
+  background-color: #E2E6E9;
+  width: 14px;
+  height: 4px;
+  margin-right: 14px;
+
+  &_last {
+    @extend .indicator;
+    margin: 0;
+  }
+
+  &_active {
+    background-color: $black-color;
+  }
+}

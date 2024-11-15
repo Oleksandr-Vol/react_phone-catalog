@@ -1,1 +1,26 @@
-// not empty
+@import './utils/styles/reset.scss';
+
+@font-face {
+  font-family: Mont;
+  src: url(/public/fonts/Mont-Regular.otf);
+}
+
+@font-face {
+  font-family: Mont;
+  src: url(/public/fonts/Mont-Bold.otf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Mont;
+  src: url(/public/fonts/Mont-SemiBold.otf);
+  font-weight: 700;
+}
+
+.App {
+  font-family: Mont, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #89939A;
+  scroll-behavior: smooth;
+}

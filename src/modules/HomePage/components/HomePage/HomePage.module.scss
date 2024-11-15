@@ -1,0 +1,21 @@
+.hidden_title {
+  display: none;
+}
+
+.title {
+  @include contentPaddingInLine;
+
+  padding-block: 24px;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  color: $black-color;
+  background-color: $gray-background;
+}
+
+
+
+
+.empty_space {
+  height: 150px;
+}
