@@ -3,7 +3,7 @@
 }
 
 .title {
-  @include contentPaddingInLine;
+  @include content-padding-inline;
 
   padding-block: 24px;
   font-weight: 800;
@@ -12,9 +12,6 @@
   color: $black-color;
   background-color: $gray-background;
 }
-
-
-
 
 .empty_space {
   height: 150px;
