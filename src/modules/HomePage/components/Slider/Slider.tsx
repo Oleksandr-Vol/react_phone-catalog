@@ -3,7 +3,7 @@ import styles from './Slider.module.scss';
 export const Slider = () => (
   <>
     <img
-      src="/img/slider/mobile/iPhone-14-pro.png"
+      src="./img/slider/mobile/iPhone-14-pro.png"
       alt="iPhone 14 Pro"
       className={styles.image}
     />
