@@ -5,12 +5,11 @@
 .title {
   @include content-padding-inline;
 
-  padding-block: 24px;
+  margin-block: 24px;
   font-weight: 800;
   font-size: 32px;
   line-height: 41px;
   color: $black-color;
-  background-color: $gray-background;
 }
 
 .empty_space {

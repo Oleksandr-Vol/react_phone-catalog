@@ -17,10 +17,14 @@
   font-weight: 700;
 }
 
-.App {
+.app {
   font-family: Mont, sans-serif;
   font-size: 14px;
   line-height: 21px;
   color: #89939A;
   scroll-behavior: smooth;
+
+  &_container {
+    background-color: $gray-background;
+  }
 }

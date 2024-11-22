@@ -1,3 +1,8 @@
+.container {
+  font-size: 0;
+  line-height: 0;
+}
+
 .image {
   width: 100%;
   margin-bottom: 18px;
@@ -10,7 +15,7 @@
 }
 
 .indicator {
-  background-color: #E2E6E9;
+  background-color: $gray-elements;
   width: 14px;
   height: 4px;
   margin-right: 14px;

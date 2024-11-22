@@ -3,9 +3,11 @@ import './App.scss';
 import { Header } from './modules/shared/components/Header';
 
 export const App = () => (
-  <div className="App">
+  <div className="app">
     <Header />
 
-    <Outlet />
+    <div className="app_container">
+      <Outlet />
+    </div>
   </div>
 );

@@ -1,1 +1,54 @@
+.title_container {
+  @include content-padding-inline;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+font-size: 22px;
+font-weight: 800;
+line-height: 30.8px;
+color: $black-color;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $gray-icons;
+  border-radius: 50%;
+
+  &_disabled {
+    border: 1px solid $gray-elements;
+  }
+}
+
+.arrow_l {
+  background-image: url(/public/img/icons/arrow.svg);
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+
+  &_disabled {
+    background-image: url(/public/img/icons/arrow-disabled.svg);
+  }
+}
+
+.arrow_r {
+  background-image: url(/public/img/icons/arrow.svg);
+  width: 16px;
+  height: 16px;
+}
+
 
