@@ -18,7 +18,7 @@ export const BrandNew = () => (
     <div className={styles.cards_container}>
       <div className={styles.card}>
         <img
-          src="./public/img/phones/apple-iphone-14/midnight/00.webp"
+          src="./img/phones/apple-iphone-14/midnight/00.webp"
           alt="Apple iPhone 14 Midnight"
         />
       </div>
