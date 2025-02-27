@@ -1,3 +1,80 @@
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin content-padding-inline {
   padding-inline: 16px;
+}
+
+@mixin page-grid {
+  --columns: 4;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+@mixin home-page-section-tittle {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+  color: $black-color;
+}
+
+@mixin home-page-category-tittle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: $black-color;
+}
+
+@mixin button-arrow {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(/public/img/buttons/button_arrow-default.svg);
+  transition: 0.3s;
+
+  &:hover {
+    background-image: url(/public/img/buttons/button_arrow-hover.svg);
+  }
+}
+
+@mixin icon-properties {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
+@mixin page-title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  color: $black-color;
+}
+
+@mixin blue-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #216cff;
+  transition: 0.3s;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
+  }
 }

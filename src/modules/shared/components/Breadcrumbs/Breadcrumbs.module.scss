@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  margin-bottom: 24px;
+  gap: 8px;
+  // height: 16px;
+}
+
+.button_home {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/home.svg);
+  flex-shrink: 0;
+}
+
+.icon_arrow {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/arrow.svg);
+  flex-shrink: 0;
+}
+
+.breadcrumbs_text {
+  align-self: flex-end;
+  line-height: 13px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: none;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  // &_link {
+  //   color: $black-color;
+  //   pointer-events: all;
+  //   flex-shrink: 0;
+  // }
+}
+
+.disabled {
+  display: none;
+}

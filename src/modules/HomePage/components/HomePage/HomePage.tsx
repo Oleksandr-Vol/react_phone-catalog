@@ -1,4 +1,5 @@
-import { BrandNew } from '../BrandNew';
+import { CardSlider } from '../CardSlider';
+import { Categories } from '../Categories';
 import { Slider } from '../Slider';
 import styles from './HomePage.module.scss';
 
@@ -10,8 +11,16 @@ export const HomePage = () => (
 
     <Slider />
 
-    <BrandNew />
+    <section className={styles.section}>
+      <CardSlider />
+    </section>
 
-    <div className={styles.empty_space}></div>
+    <section className={`${styles.section} ${styles.section_categories}`}>
+      <Categories />
+    </section>
+
+    <section>
+      <CardSlider />
+    </section>
   </>
 );

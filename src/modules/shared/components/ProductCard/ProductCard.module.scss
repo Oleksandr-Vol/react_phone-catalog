@@ -1,0 +1,81 @@
+.container {
+  width: 212px;
+  padding: 32px;
+  border: 1px solid $gray-elements;
+  border-radius: 8px;
+  background-color: white;
+
+  &_catalog {
+    width: 287px;
+  }
+}
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.image {
+  height: 129px;
+}
+
+.name {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  color: $black-color;
+  margin-bottom: 8px;
+}
+
+.price_container {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 31px;
+  color: $black-color;
+  margin-right: 8px;
+
+  &_old {
+    font-size: 22px;
+    line-height: 31px;
+    text-decoration: underline;
+    text-underline-offset: -40%;
+    text-decoration-skip-ink: none;
+  }
+}
+
+.line {
+  background-color: $gray-elements;
+  height: 1px;
+  margin-bottom: 16px;
+}
+
+.specs_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  &_bottom {
+    margin-bottom: 16px;
+  }
+}
+
+.specs_name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.specs_inf {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  color: $black-color;
+}

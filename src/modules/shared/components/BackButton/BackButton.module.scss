@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  gap: 4px;
+  grid-column: 1 / -1;
+  justify-self: start;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: $black-color;
+  }
+}
+
+.arrow {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/arrow-back.svg);
+}
+
+.text {
+  align-self: flex-end;
+  line-height: 14px;
+  font-size: 12px;
+  font-weight: 700;
+}

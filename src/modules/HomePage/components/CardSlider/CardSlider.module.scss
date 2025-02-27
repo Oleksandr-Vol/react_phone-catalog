@@ -1,0 +1,37 @@
+.title_container {
+  @include content-padding-inline;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  @include home-page-section-tittle;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.button_arrow {
+  @include button-arrow;
+
+  transform: rotate(180deg);
+
+  &_disabled {
+    background-image: url(/public/img/buttons/button_arrow-disabled.svg);
+    pointer-events: none;
+  }
+
+  &_right {
+    transform: initial;
+  }
+}
+
+// .cards_container {
+
+// }

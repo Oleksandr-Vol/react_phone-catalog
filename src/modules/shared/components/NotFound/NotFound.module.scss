@@ -1,0 +1,4 @@
+.title {
+  @include page-title;
+  @include content-padding-inline;
+}

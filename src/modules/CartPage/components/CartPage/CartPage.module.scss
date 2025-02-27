@@ -1,0 +1,143 @@
+.container {
+  @include content-padding-inline;
+  @include page-grid;
+}
+
+.back_button {
+  margin-bottom: 24px;
+}
+
+.title {
+  @include page-title;
+
+  grid-column: 1 / -1;
+  margin-bottom: 32px;
+}
+
+.products_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column: 1 / -1;
+  margin-bottom: 32px;
+}
+
+.checkout_container {
+  grid-column: 1 / -1;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  background-color: white;
+  padding: 16px;
+  border: 1px solid $gray-elements;
+  border-radius: 16px;
+}
+
+.product_container_first {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.button_delete {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/close-gray.svg);
+}
+
+.image_link {
+  display: flex;
+}
+
+.image {
+  height: 66px;
+}
+
+.product_name {
+  text-decoration: none;
+  color: $black-color;
+}
+
+.product_container_second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96px;
+}
+
+.quantity_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $gray-icons;
+  border-radius: 50%;
+
+  &:hover {
+    border-color: $black-color;
+  }
+
+  &_disabled {
+    border-color: $gray-elements;
+  }
+}
+
+.icon_minus {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/minus.svg);
+
+  &_disabled {
+  background-image: url(/public/img/icons/minus-gray.svg);
+  }
+}
+
+.quantity {
+  color: $black-color;
+}
+
+.icon_plus {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/plus.svg);
+}
+
+.product_price {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 31px;
+  color: $black-color;
+}
+
+.checkout_container {
+  padding: 24px;
+  border: 1px solid $gray-elements;
+  border-radius: 16px;
+}
+
+.total_price {
+  @include page-title;
+
+  text-align: center;
+}
+
+.checkout_text {
+  padding-bottom: 16px;
+  border-bottom: 1px solid $gray-elements;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.checkout_button {
+  @include blue-buttons;
+}

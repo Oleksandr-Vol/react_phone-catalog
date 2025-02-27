@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  gap: 8px;
+}
+
+.add_to_cart {
+  @include blue-buttons;
+
+  flex: 1;
+
+  // &_product_card {
+  //   height: 40px;
+  // }
+
+  // &_selected {
+  //   border: 1px solid $gray-elements;
+  //   background-color: inherit;
+  //   color: $blue-buttons;
+  // }
+}
+
+.add_to_favourites {
+  @include icon-properties;
+
+  width: 48px;
+  height: 48px;
+  background-image: url(/public/img/buttons/button_heart-default.svg);
+  transition: 0.3s;
+
+  // &_product_card {
+  //   width: 40px;
+  //   height: 40px;
+  // }
+
+  &:hover {
+    background-image: url(/public/img/buttons/button_heart-hover.svg);
+  }
+
+  // &_selected {
+  //   background-image: url(/public/img/buttons/button_heart-red.svg);
+  // }
+}

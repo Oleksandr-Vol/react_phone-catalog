@@ -18,6 +18,9 @@
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Mont, sans-serif;
   font-size: 14px;
   line-height: 21px;
@@ -26,5 +29,7 @@
 
   &_container {
     background-color: $gray-background;
+    padding-block: 24px 64px;
+    flex: 1;
   }
 }

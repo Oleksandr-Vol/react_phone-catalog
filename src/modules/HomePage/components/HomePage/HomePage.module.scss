@@ -4,14 +4,15 @@
 
 .title {
   @include content-padding-inline;
+  @include page-title;
 
-  margin-block: 24px;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 41px;
-  color: $black-color;
+  padding-bottom: 24px;
 }
 
-.empty_space {
-  height: 150px;
+.section {
+  margin-bottom: 56px;
+
+  &_categories {
+    @include content-padding-inline;
+  }
 }
