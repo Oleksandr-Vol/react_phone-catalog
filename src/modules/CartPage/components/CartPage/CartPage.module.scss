@@ -1,6 +1,7 @@
 .container {
   @include content-padding-inline;
   @include page-grid;
+
   align-items: start;
 }
 
@@ -80,8 +81,8 @@
 
 .button_delete {
   @include icon-properties;
+  
   flex-shrink: 0;
-
   background-image: url(/public/img/icons/close-gray.svg);
 }
 

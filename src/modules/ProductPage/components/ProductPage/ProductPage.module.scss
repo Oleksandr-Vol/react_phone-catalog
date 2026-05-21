@@ -31,6 +31,7 @@
 
 .cards {
   @include cards-container;
+  
   margin-bottom: 24px;
 
   @include on-tablet {
