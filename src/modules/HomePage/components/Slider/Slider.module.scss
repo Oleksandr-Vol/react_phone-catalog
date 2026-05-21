@@ -1,28 +1,100 @@
 .container {
-  font-size: 0;
-  line-height: 0;
-  margin-bottom: 66px;
+  @include on-tablet {
+    @include content-padding-inline;
+    @include page-grid;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(20, 1fr);
+  }
+}
+
+.button {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 2;
+    width: 32px;
+    height: 189px;
+    border: 1px solid $gray-icons;
+    border-radius: 48px;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: $black-color;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    height: 300px;
+  }
+
+  @include on-desktop {
+    width: 32px;
+    height: 400px;
+  }
+
+  &_r {
+    grid-column: -2 / -1;
+    justify-self: end;
+  }
+}
+
+.icon_arrow {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/arrow.svg);
+
+  &_r {
+    transform: rotate(180deg);
+  }
 }
 
 .image {
   width: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+
+  @include on-tablet {
+    grid-column: 2 / -2;
+    height: 189px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 300px;
+  }
+
+  @include on-desktop {
+    height: 400px;
+  }
 }
 
 .indicators_wrapper {
   display: flex;
   justify-content: center;
+  gap: 4px;
+
+  @include on-tablet {
+    grid-column: 1 / -1;
+  }
+}
+
+.indicator_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 }
 
 .indicator {
   background-color: $gray-elements;
   width: 14px;
   height: 4px;
-  margin-right: 14px;
-
-  &_last {
-    margin: 0;
-  }
 
   &_active {
     background-color: $black-color;

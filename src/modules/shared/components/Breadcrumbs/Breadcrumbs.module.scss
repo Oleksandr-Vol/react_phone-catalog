@@ -2,7 +2,10 @@
   display: flex;
   margin-bottom: 24px;
   gap: 8px;
-  // height: 16px;
+
+  @include on-tablet {
+    margin-bottom: 40px;
+  }
 }
 
 .button_home {
@@ -15,7 +18,8 @@
 .icon_arrow {
   @include icon-properties;
 
-  background-image: url(/public/img/icons/arrow.svg);
+  background-image: url(/public/img/icons/arrow-gray.svg);
+  transform: rotate(180deg);
   flex-shrink: 0;
 }
 
@@ -31,13 +35,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  // &_link {
-  //   color: $black-color;
-  //   pointer-events: all;
-  //   flex-shrink: 0;
-  // }
+  &_link {
+    color: $black-color;
+    pointer-events: all;
+    flex-shrink: 0;
+  }
 }
 
-.disabled {
-  display: none;
-}
+// .disabled {
+//   display: none;
+// }

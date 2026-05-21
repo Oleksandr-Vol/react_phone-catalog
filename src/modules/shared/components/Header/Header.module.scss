@@ -1,25 +1,45 @@
 .container {
+  display: flex;
   background-color: white;
   position: sticky;
   top: 0;
-}
-
-.mobile_header {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 16px;
   height: $header-height;
   border-bottom: 1px solid $gray-elements;
+  z-index: 1;
+
+  @include on-tablet {
+    justify-content: flex-start;
+  }
+
+  @include on-desktop {
+    height: $header-height-desktop;
+    padding-left: 24px;
+  }
 }
 
 .logo_link {
   display: flex;
+
+  @include on-tablet {
+    margin-right: 32px;
+  }
+
+  @include on-desktop {
+    margin-right: 48px;
+  }
 }
 
 .logo {
   width: 64px;
   height: 22px;
+
+  @include on-desktop {
+    width: 80px;
+    height: 28px;
+  }
 }
 
 .button_menu {
@@ -29,6 +49,10 @@
   width: $header-height;
   height: $header-height;
   border-left: 1px solid $gray-elements;
+
+  @include on-tablet {
+    display: none;
+  }
 }
 
 .icon_menu {
@@ -39,142 +63,4 @@
   // &_close {
   //   background-image: url(/public/img/icons/close.svg);
   // }
-}
-
-.nav_container {
-  display: none;
-  padding-top: 24px;
-  height: calc(100vh - $header-height);
-  position: fixed;
-  top: $header-height;
-  left: 0;
-  right: 0;
-  background-color: white;
-
-  @include onTablet {
-    display: block;
-    padding-top: 19px;
-    height: $header-height;
-    top: 0;
-    left: 112px;
-    right: 0;
-    background-color: white;
-  }
-
-  // &_modal {
-  //   display: block;
-  // }
-}
-
-.nav {
-  &_list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-
-    @include onTablet {
-      flex-direction: row;
-      align-items: center;
-      gap: 16px;
-    }
-  }
-
-  &_item {
-    display: flex;
-  }
-
-  &_link {
-    display: flex;
-    align-items: center;
-    height: 27px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 11px;
-    color: inherit;
-    position: relative;
-
-    &_active {
-      color: $black-color-secondary;
-      border-bottom: 2px solid $black-color-secondary;
-    }
-  }
-}
-
-.buttons_container {
-  display: flex;
-  border-top: 1px solid $gray-elements;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
-  @include onTablet {
-    width: ($header-height * 2) + 1px;
-    right: 0;
-    border-left: 1px solid $gray-elements;
-  }
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 64px;
-  width: 50%;
-
-  @include onTablet {
-    width: $header-height;
-    height: $header-height;
-  }
-
-  &_left {
-    border-right: 1px solid $gray-elements;
-  }
-
-  // &_active {
-  //   border-bottom: 2px solid $black-color-secondary;
-  // }
-}
-
-.icon_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 28px;
-  height: 28px;
-  position: relative;
-}
-
-.icon_favourites {
-  @include icon-properties;
-
-  background-image: url(/public/img/icons/heart.svg);
-}
-
-.icon_cart {
-  @include icon-properties;
-
-  background-image: url(/public/img/icons/cart.svg);
-}
-
-.quantity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 14px;
-  height: 14px;
-  border: 1px solid white;
-  border-radius: 50%;
-  position: absolute;
-  background-color: #f447af;
-  top: 0;
-  right: 0;
-  font-size: 9px;
-  line-height: 11px;
-  color: white;
-
-  display: none;
 }

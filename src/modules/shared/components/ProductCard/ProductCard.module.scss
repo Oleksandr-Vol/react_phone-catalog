@@ -5,19 +5,40 @@
   border-radius: 8px;
   background-color: white;
 
-  &_catalog {
-    width: 287px;
+  @include on-tablet {
+    width: 237px;
   }
+
+  @include on-desktop {
+    width: 272px;
+  }
+
+  // &_catalog {
+  //   width: 287px;
+
+  //   @include on-tablet {
+  //     width: 100%;
+  //   }
+  // }
 }
 
 .image_container {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .image {
   height: 129px;
+
+  @include on-tablet {
+    height: 202px;
+  }
 }
 
 .name {
@@ -32,7 +53,9 @@
 
 .price_container {
   display: flex;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $gray-elements;
+  margin-bottom: 16px;
 }
 
 .price {
@@ -49,12 +72,6 @@
     text-underline-offset: -40%;
     text-decoration-skip-ink: none;
   }
-}
-
-.line {
-  background-color: $gray-elements;
-  height: 1px;
-  margin-bottom: 16px;
 }
 
 .specs_container {

@@ -10,7 +10,12 @@ export const FavoritesPage = () => (
 
     <p className={styles.items_quantity}>5 items</p>
 
-    <div className={styles.cards_container}>
+    <div className={styles.cards}>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
       <ProductCard />
     </div>
   </div>

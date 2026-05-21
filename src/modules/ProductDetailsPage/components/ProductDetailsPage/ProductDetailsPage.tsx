@@ -4,22 +4,21 @@ import styles from './ProductDetailsPage.module.scss';
 import { ProductButtons } from '../../../shared/components/ProductButtons';
 import { CardSlider } from '../../../HomePage/components/CardSlider';
 import { BackButton } from '../../../shared/components/BackButton';
+import { Link } from 'react-router-dom';
 
 export const ProductDetailsPage = () => (
-  <>
-    <div className={styles.container}>
-      <div className={styles.breadcrumbs}>
-        <Breadcrumbs />
-      </div>
+  <div className={styles.container}>
+    <Breadcrumbs />
 
-      <div className={styles.back_button}>
-        <BackButton />
-      </div>
+    <div className={styles.back_button}>
+      <BackButton />
+    </div>
 
-      <h1 className={styles.title}>
-        Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
-      </h1>
+    <h1 className={styles.title}>
+      Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
+    </h1>
 
+    <div className={styles.wrapper}>
       <div className={styles.images}>
         <img
           src="/public/img/phones/apple-iphone-11-pro-max/gold/00.webp"
@@ -28,7 +27,8 @@ export const ProductDetailsPage = () => (
         />
 
         <div className={styles.preview}>
-          <div
+          <Link
+            to="#"
             className={`${styles.preview_image_container} ${styles.preview_image_container_active}`}
           >
             <img
@@ -36,35 +36,39 @@ export const ProductDetailsPage = () => (
               alt="iphone"
               className={styles.preview_image}
             />
-          </div>
-          <div className={styles.preview_image_container}>
+          </Link>
+
+          <Link to="#" className={styles.preview_image_container}>
             <img
               src="/public/img/phones/apple-iphone-14-pro/spaceblack/01.webp"
               alt="iphone"
               className={styles.preview_image}
             />
-          </div>
-          <div className={styles.preview_image_container}>
+          </Link>
+
+          <Link to="#" className={styles.preview_image_container}>
             <img
               src="/public/img/phones/apple-iphone-14-pro/spaceblack/02.webp"
               alt="iphone"
               className={styles.preview_image}
             />
-          </div>
-          <div className={styles.preview_image_container}>
+          </Link>
+
+          <Link to="#" className={styles.preview_image_container}>
             <img
               src="/public/img/phones/apple-iphone-14-pro/spaceblack/03.webp"
               alt="iphone"
               className={styles.preview_image}
             />
-          </div>
-          <div className={styles.preview_image_container}>
+          </Link>
+
+          <Link to="#" className={styles.preview_image_container}>
             <img
               src="/public/img/phones/apple-iphone-14-pro/spaceblack/04.webp"
               alt="iphone"
               className={styles.preview_image}
             />
-          </div>
+          </Link>
         </div>
       </div>
 
@@ -75,129 +79,131 @@ export const ProductDetailsPage = () => (
           <p className={styles.small_text}>ID: 802390</p>
         </div>
 
-        <div className={styles.options_container}>
-          <label
-            className={`${styles.color_container} ${styles.color_container_selected}`}
+        <div className={styles.options_wrapper}>
+          <div className={styles.options_container}>
+            <label
+              className={`${styles.color_container} ${styles.color_container_selected}`}
+            >
+              <input
+                type="radio"
+                className={styles.color}
+                style={{ backgroundColor: '#216cff' }}
+                name="color"
+                value="colorName"
+                checked
+              />
+            </label>
+
+            <label className={styles.color_container}>
+              <input
+                type="radio"
+                className={styles.color}
+                style={{ backgroundColor: 'green' }}
+                name="color"
+                value="colorName"
+                checked
+              />
+            </label>
+
+            <label className={styles.color_container}>
+              <input
+                type="radio"
+                className={styles.color}
+                style={{ backgroundColor: 'yellow' }}
+                name="color"
+                value="colorName"
+                checked
+              />
+            </label>
+
+            <label className={styles.color_container}>
+              <input
+                type="radio"
+                className={styles.color}
+                style={{ backgroundColor: 'gray' }}
+                name="color"
+                value="colorName"
+                checked
+              />
+            </label>
+          </div>
+
+          <div className={styles.small_text}>Select capacity</div>
+
+          <div
+            className={`${styles.options_container} ${styles.options_container_bottom}`}
           >
-            <input
-              type="radio"
-              className={styles.color}
-              style={{ backgroundColor: '#216cff' }}
-              name="color"
-              value="colorName"
-              checked
-            />
-          </label>
+            <label
+              className={`${styles.capacity_container} ${styles.capacity_container_selected}`}
+            >
+              64GB
+              <input
+                type="radio"
+                className={styles.capacity}
+                name="capacity"
+                value="capacityValue"
+                checked
+              />
+            </label>
 
-          <label className={styles.color_container}>
-            <input
-              type="radio"
-              className={styles.color}
-              style={{ backgroundColor: 'green' }}
-              name="color"
-              value="colorName"
-              checked
-            />
-          </label>
+            <label className={styles.capacity_container}>
+              64GB
+              <input
+                type="radio"
+                className={styles.capacity}
+                name="capacity"
+                value="capacityValue"
+                checked
+              />
+            </label>
 
-          <label className={styles.color_container}>
-            <input
-              type="radio"
-              className={styles.color}
-              style={{ backgroundColor: 'yellow' }}
-              name="color"
-              value="colorName"
-              checked
-            />
-          </label>
+            <label className={styles.capacity_container}>
+              64GB
+              <input
+                type="radio"
+                className={styles.capacity}
+                name="capacity"
+                value="capacityValue"
+                checked
+              />
+            </label>
+          </div>
 
-          <label className={styles.color_container}>
-            <input
-              type="radio"
-              className={styles.color}
-              style={{ backgroundColor: 'gray' }}
-              name="color"
-              value="colorName"
-              checked
-            />
-          </label>
-        </div>
+          <div className={styles.price_container}>
+            <p className={styles.price}>$999</p>
 
-        <div className={styles.small_text}>Select capacity</div>
+            <p className={styles.price_old}>$1255</p>
+          </div>
 
-        <div
-          className={`${styles.options_container} ${styles.options_container_bottom}`}
-        >
-          <label
-            className={`${styles.capacity_container} ${styles.capacity_container_selected}`}
+          <div className={styles.product_buttons}>
+            <ProductButtons />
+          </div>
+
+          <div className={`${styles.specs_container} ${styles.small_text}`}>
+            <p>Screen</p>
+
+            <p className={styles.black_color}>6.1” OLED</p>
+          </div>
+
+          <div className={`${styles.specs_container} ${styles.small_text}`}>
+            <p>Resolution</p>
+
+            <p className={styles.black_color}>128 GB</p>
+          </div>
+
+          <div className={`${styles.specs_container} ${styles.small_text}`}>
+            <p>Processor</p>
+
+            <p className={styles.black_color}>128 GB</p>
+          </div>
+
+          <div
+            className={`${styles.specs_container} ${styles.small_text} ${styles.specs_container_bottom}`}
           >
-            64GB
-            <input
-              type="radio"
-              className={styles.capacity}
-              name="capacity"
-              value="capacityValue"
-              checked
-            />
-          </label>
+            <p>RAM</p>
 
-          <label className={styles.capacity_container}>
-            64GB
-            <input
-              type="radio"
-              className={styles.capacity}
-              name="capacity"
-              value="capacityValue"
-              checked
-            />
-          </label>
-
-          <label className={styles.capacity_container}>
-            64GB
-            <input
-              type="radio"
-              className={styles.capacity}
-              name="capacity"
-              value="capacityValue"
-              checked
-            />
-          </label>
-        </div>
-
-        <div className={styles.price_container}>
-          <p className={styles.price}>$999</p>
-
-          <p className={styles.price_old}>$1255</p>
-        </div>
-
-        <div className={styles.product_buttons}>
-          <ProductButtons />
-        </div>
-
-        <div className={`${styles.specs_container} ${styles.small_text}`}>
-          <p>Screen</p>
-
-          <p className={styles.black_color}>6.1” OLED</p>
-        </div>
-
-        <div className={`${styles.specs_container} ${styles.small_text}`}>
-          <p>Resolution</p>
-
-          <p className={styles.black_color}>128 GB</p>
-        </div>
-
-        <div className={`${styles.specs_container} ${styles.small_text}`}>
-          <p>Processor</p>
-
-          <p className={styles.black_color}>128 GB</p>
-        </div>
-
-        <div
-          className={`${styles.specs_container} ${styles.small_text} ${styles.specs_container_bottom}`}
-        >
-          <p>RAM</p>
-
-          <p className={styles.black_color}>6 GB</p>
+            <p className={styles.black_color}>6 GB</p>
+          </div>
         </div>
       </div>
 
@@ -305,5 +311,5 @@ export const ProductDetailsPage = () => (
     <section className={styles.card_slider}>
       <CardSlider />
     </section>
-  </>
+  </div>
 );

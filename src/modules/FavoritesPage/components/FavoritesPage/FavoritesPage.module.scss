@@ -10,11 +10,12 @@
 
 .items_quantity {
   margin-bottom: 32px;
+
+  @include on-tablet {
+    margin-bottom: 40px;
+  }
 }
 
-.cards_container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  row-gap: 40px;
+.cards {
+  @include cards-container;
 }

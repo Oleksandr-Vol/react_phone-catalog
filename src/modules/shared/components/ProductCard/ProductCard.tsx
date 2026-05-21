@@ -22,8 +22,6 @@ export const ProductCard = () => (
       <p className={styles.price_old}>$1255</p>
     </div>
 
-    <div className={styles.line}></div>
-
     <div className={styles.specs_container}>
       <p className={styles.specs_name}>Screen</p>
 

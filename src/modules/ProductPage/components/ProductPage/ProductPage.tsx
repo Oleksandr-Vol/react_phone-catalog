@@ -34,7 +34,12 @@ export const ProductPage = () => (
       </div>
     </div>
 
-    <div className={styles.cards_container}>
+    <div className={styles.cards}>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
       <ProductCard />
     </div>
 

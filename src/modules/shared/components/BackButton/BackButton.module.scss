@@ -1,7 +1,6 @@
 .container {
   display: flex;
   gap: 4px;
-  grid-column: 1 / -1;
   justify-self: start;
   text-decoration: none;
   color: inherit;
@@ -14,7 +13,7 @@
 .arrow {
   @include icon-properties;
 
-  background-image: url(/public/img/icons/arrow-back.svg);
+  background-image: url(/public/img/icons/arrow.svg);
 }
 
 .text {

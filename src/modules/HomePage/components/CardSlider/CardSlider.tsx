@@ -20,7 +20,7 @@ export const CardSlider = () => (
       </div>
     </div>
 
-    <div className={styles.cards_container}>
+    <div className={styles.cards}>
       <ProductCard />
     </div>
   </>

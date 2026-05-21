@@ -1,10 +1,10 @@
-@mixin onTablet {
+@mixin on-tablet {
   @media (min-width: 640px) {
     @content;
   }
 }
 
-@mixin onDesktop {
+@mixin on-desktop {
   @media (min-width: 1200px) {
     @content;
   }
@@ -12,13 +12,32 @@
 
 @mixin content-padding-inline {
   padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 24px;
+  }
+
+  @include on-desktop {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
 }
 
 @mixin page-grid {
   --columns: 4;
+
   display: grid;
   column-gap: 16px;
   grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 12;
+  }
+
+  @include on-desktop {
+    --columns: 24;
+  }
 }
 
 @mixin home-page-section-tittle {
@@ -26,13 +45,11 @@
   font-weight: 800;
   line-height: 31px;
   color: $black-color;
-}
 
-@mixin home-page-category-tittle {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-  color: $black-color;
+  @include on-tablet {
+    font-size: 32px;
+    line-height: 41px;
+  }
 }
 
 @mixin button-arrow {
@@ -60,6 +77,11 @@
   font-size: 32px;
   line-height: 41px;
   color: $black-color;
+
+  @include on-tablet {
+    font-size: 48px;
+    line-height: 56px;
+  }
 }
 
 @mixin blue-buttons {
@@ -76,5 +98,31 @@
 
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
+
+@mixin cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 287px);
+    justify-content: center;
+    gap: 40px 16px;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 229px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 229px);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, 272px);
   }
 }

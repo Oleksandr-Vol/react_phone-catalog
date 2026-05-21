@@ -9,17 +9,19 @@ export const HomePage = () => (
 
     <h1 className={styles.title}>Welcome to Nice Gadgets store!</h1>
 
-    <Slider />
+    <div className={styles.slider}>
+      <Slider />
+    </div>
 
     <section className={styles.section}>
       <CardSlider />
     </section>
 
-    <section className={`${styles.section} ${styles.section_categories}`}>
+    <section className={styles.section}>
       <Categories />
     </section>
 
-    <section>
+    <section className={`${styles.section} ${styles.section_bottom}`}>
       <CardSlider />
     </section>
   </>

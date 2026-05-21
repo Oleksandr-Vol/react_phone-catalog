@@ -49,6 +49,84 @@ export const CartPage = () => (
           <p className={styles.product_price}>$999</p>
         </div>
       </article>
+
+      <article className={styles.product}>
+        <div className={styles.product_container_first}>
+          <Link to="#" className={styles.button_delete}></Link>
+
+          <Link to="#" className={styles.image_link}>
+            <img
+              src="./img/phones/apple-iphone-14/midnight/00.webp"
+              alt="Apple iPhone 14 Midnight"
+              className={styles.image}
+            />
+          </Link>
+
+          <Link to="#" className={styles.product_name}>
+            Apple iPhone 14 Pro 128GB Silver (MQ023)
+          </Link>
+        </div>
+
+        <div className={styles.product_container_second}>
+          <div className={styles.quantity_container}>
+            <Link
+              to="#"
+              className={`${styles.quantity_button} ${styles.quantity_button_disabled}`}
+            >
+              <div
+                className={`${styles.icon_minus} ${styles.icon_minus_disabled}`}
+              ></div>
+            </Link>
+
+            <p className={styles.quantity}>1</p>
+
+            <Link to="#" className={styles.quantity_button}>
+              <div className={styles.icon_plus}></div>
+            </Link>
+          </div>
+
+          <p className={styles.product_price}>$999</p>
+        </div>
+      </article>
+
+      <article className={styles.product}>
+        <div className={styles.product_container_first}>
+          <Link to="#" className={styles.button_delete}></Link>
+
+          <Link to="#" className={styles.image_link}>
+            <img
+              src="./img/phones/apple-iphone-14/midnight/00.webp"
+              alt="Apple iPhone 14 Midnight"
+              className={styles.image}
+            />
+          </Link>
+
+          <Link to="#" className={styles.product_name}>
+            Apple iPhone 14 Pro 128GB Silver (MQ023)
+          </Link>
+        </div>
+
+        <div className={styles.product_container_second}>
+          <div className={styles.quantity_container}>
+            <Link
+              to="#"
+              className={`${styles.quantity_button} ${styles.quantity_button_disabled}`}
+            >
+              <div
+                className={`${styles.icon_minus} ${styles.icon_minus_disabled}`}
+              ></div>
+            </Link>
+
+            <p className={styles.quantity}>1</p>
+
+            <Link to="#" className={styles.quantity_button}>
+              <div className={styles.icon_plus}></div>
+            </Link>
+          </div>
+
+          <p className={styles.product_price}>$999</p>
+        </div>
+      </article>
     </div>
 
     <div className={styles.checkout_container}>

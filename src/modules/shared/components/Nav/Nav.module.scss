@@ -1,0 +1,185 @@
+.container {
+  display: none;
+  flex-direction: column;
+  padding-top: 24px;
+  height: calc(100vh - $header-height);
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  background-color: white;
+
+  @include on-tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    position: static;
+    height: $header-height;
+    border-bottom: 1px solid $gray-elements;
+    flex: 1;
+  }
+
+  @include on-desktop {
+    height: $header-height-desktop;
+  }
+
+  // &_modal {
+  //   display: flex;
+  // }
+}
+
+.list_container {
+  flex: 1;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @include on-tablet {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  @include on-desktop {
+    gap: 64px;
+  }
+}
+
+.item {
+  display: flex;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 27px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 11px;
+  color: inherit;
+  position: relative;
+
+  @include on-tablet {
+    height: $header-height;
+  }
+
+  @include on-desktop {
+    height: $header-height-desktop;
+  }
+
+  &_active {
+    color: $black-color-secondary;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: $black-color-secondary;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.buttons_container {
+  display: flex;
+  border-top: 1px solid $gray-elements;
+  width: 100%;
+
+  @include on-tablet {
+    width: ($header-height * 2);
+    border-top: none;
+    border-left: 1px solid $gray-elements;
+  }
+
+  @include on-desktop {
+    width: ($header-height-desktop * 2);
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 50%;
+  position: relative;
+
+  @include on-tablet {
+    width: $header-height;
+    height: $header-height;
+  }
+
+  @include on-desktop {
+    width: $header-height-desktop;
+    height: $header-height-desktop;
+  }
+
+  &_left {
+    border-right: 1px solid $gray-elements;
+  }
+
+  // &_active {
+  //   &::after {
+  //     content: "";
+  //     display: block;
+  //     height: 2px;
+  //     width: 100%;
+  //     background-color: $black-color-secondary;
+  //     position: absolute;
+  //     bottom: 0;
+
+  //     @include on-tablet {
+  //       height: 3px;
+  //     }
+  //   }
+  // }
+}
+
+.icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+.icon_favourites {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/heart.svg);
+}
+
+.icon_cart {
+  @include icon-properties;
+
+  background-image: url(/public/img/icons/cart.svg);
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #f447af;
+  top: 0;
+  right: 0;
+  font-size: 9px;
+  line-height: 11px;
+  color: white;
+
+  display: none;
+}
