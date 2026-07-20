@@ -2,10 +2,14 @@ import { ProductCard } from '../../../shared/components/ProductCard';
 import styles from './CardSlider.module.scss';
 import { Link } from 'react-router-dom';
 
-export const CardSlider = () => (
+type Props = {
+  title: string;
+};
+
+export const CardSlider: React.FC<Props> = ({ title }) => (
   <>
     <div className={styles.title_container}>
-      <h2 className={styles.title}>Brand new models</h2>
+      <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.buttons_container}>
         <Link

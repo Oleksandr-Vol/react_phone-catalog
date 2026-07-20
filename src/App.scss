@@ -31,6 +31,8 @@
     background-color: $gray-background;
     padding-block: 24px 64px;
     flex: 1;
+    border-bottom: 1px solid $gray-elements;
+
 
     @include on-desktop {
       padding-bottom: 80px;

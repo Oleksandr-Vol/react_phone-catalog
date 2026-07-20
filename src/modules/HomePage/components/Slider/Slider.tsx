@@ -1,34 +1,93 @@
 import { Link } from 'react-router-dom';
 import styles from './Slider.module.scss';
+import { useCallback, useEffect, useState } from 'react';
+import classNames from 'classnames';
 
-export const Slider = () => (
-  <div className={styles.container}>
-    <Link to="#" className={styles.button}>
-      <div className={styles.icon_arrow}></div>
-    </Link>
+export const Slider = () => {
+  const slides = [
+    {
+      image: '/img/slider/mobile/iPhone-14-pro.png',
+      alt: 'iPhone 14 Pro',
+      id: 1,
+    },
+    {
+      image: '/img/banner-phones.png',
+      alt: 'iPhone 15 Pro',
+      id: 2,
+    },
+    {
+      image: '/img/banner-tablets.png',
+      alt: 'iPhone 16 Pro',
+      id: 3,
+    },
+  ];
 
-    <img
-      src="./img/slider/mobile/iPhone-14-pro.png"
-      alt="iPhone 14 Pro"
-      className={styles.image}
-    />
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    <Link to="#" className={`${styles.button} ${styles.button_r}`}>
-      <div className={`${styles.icon_arrow} ${styles.icon_arrow_r}`}></div>
-    </Link>
+  const nextSlide = useCallback(() => {
+    setCurrentSlide(prev => {
+      if (prev === slides.length - 1) {
+        return 0;
+      }
 
-    <div className={styles.indicators_wrapper}>
-      <Link to="#" className={styles.indicator_link}>
-        <div className={`${styles.indicator} ${styles.indicator_active}`}></div>
+      return prev + 1;
+    });
+  }, [slides.length]);
+
+  const previousSlide = () => {
+    setCurrentSlide(prev => {
+      if (prev === 0) {
+        return slides.length - 1;
+      }
+
+      return prev - 1;
+    });
+  };
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     nextSlide();
+  //   }, 5000);
+
+  //   return () => clearInterval(intervalId);
+  // }, [currentSlide, nextSlide]);
+
+  return (
+    <div className={styles.container}>
+      <Link to="#" className={styles.button} onClick={previousSlide}>
+        <div className={styles.icon_arrow}></div>
       </Link>
 
-      <Link to="#" className={styles.indicator_link}>
-        <div className={styles.indicator}></div>
+      <img
+        src={slides[currentSlide].image}
+        alt={slides[currentSlide].alt}
+        className={styles.image}
+      />
+
+      <Link
+        to="#"
+        className={`${styles.button} ${styles.button_r}`}
+        onClick={nextSlide}
+      >
+        <div className={`${styles.icon_arrow} ${styles.icon_arrow_r}`}></div>
       </Link>
 
-      <Link to="#" className={styles.indicator_link}>
-        <div className={styles.indicator}></div>
-      </Link>
+      <div className={styles.indicators_wrapper}>
+        {slides.map((slide, index) => (
+          <Link
+            to="#"
+            className={styles.indicator_link}
+            key={slide.id}
+            onClick={() => setCurrentSlide(index)}
+          >
+            <div
+              className={classNames(styles.indicator, {
+                [styles.indicator_active]: index === currentSlide,
+              })}
+            ></div>
+          </Link>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};

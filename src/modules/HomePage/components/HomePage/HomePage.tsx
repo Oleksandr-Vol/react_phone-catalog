@@ -14,7 +14,7 @@ export const HomePage = () => (
     </div>
 
     <section className={styles.section}>
-      <CardSlider />
+      <CardSlider title="Brand new models" />
     </section>
 
     <section className={styles.section}>
@@ -22,7 +22,7 @@ export const HomePage = () => (
     </section>
 
     <section className={`${styles.section} ${styles.section_bottom}`}>
-      <CardSlider />
+      <CardSlider title="Hot prices" />
     </section>
   </>
 );
