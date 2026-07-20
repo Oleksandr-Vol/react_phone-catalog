@@ -6,17 +6,17 @@ import classNames from 'classnames';
 export const Slider = () => {
   const slides = [
     {
-      image: '/img/slider/mobile/iPhone-14-pro.png',
+      image: './img/slider/mobile/iPhone-14-pro.png',
       alt: 'iPhone 14 Pro',
       id: 1,
     },
     {
-      image: '/img/banner-phones.png',
+      image: './img/banner-phones.png',
       alt: 'iPhone 15 Pro',
       id: 2,
     },
     {
-      image: '/img/banner-tablets.png',
+      image: './img/banner-tablets.png',
       alt: 'iPhone 16 Pro',
       id: 3,
     },
@@ -44,13 +44,13 @@ export const Slider = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     nextSlide();
-  //   }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 5000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [currentSlide, nextSlide]);
+    return () => clearInterval(intervalId);
+  }, [currentSlide, nextSlide]);
 
   return (
     <div className={styles.container}>
