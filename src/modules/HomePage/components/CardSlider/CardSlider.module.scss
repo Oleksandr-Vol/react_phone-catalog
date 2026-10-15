@@ -1,4 +1,6 @@
 .title_container {
+  @include content-padding-inline;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +17,7 @@
   width: 80px;
 }
 
-.button_arrow {
+.button {
   @include button-arrow;
 
   transform: rotate(180deg);
@@ -31,6 +33,9 @@
 }
 
 .cards {
+  @include content-padding-inline;
+
   display: flex;
   gap: 16px;
+  overflow-x: auto;
 }

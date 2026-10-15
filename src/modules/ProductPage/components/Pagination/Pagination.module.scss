@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_arrow {
+  @include button-arrow;
+
+  transform: rotate(180deg);
+
+  &_disabled {
+    background-image: url(/public/img/buttons/button_arrow-disabled.svg);
+    pointer-events: none;
+  }
+
+  &_right {
+    transform: initial;
+  }
+}
+
+.numbers {
+  display: flex;
+  gap: 8px;
+  padding-inline: 16px;
+}
+
+.button_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $gray-elements;
+  border-radius: 50%;
+  color: black;
+
+  &:hover {
+    border-color: $black-color;
+  }
+
+  &_active {
+    background-color: $black-color;
+    color: white;
+    border-color: $black-color;
+  }
+
+  &_ellipsis {
+    width: 15px;
+    border: none;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+}

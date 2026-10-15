@@ -1,23 +1,45 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Breadcrumbs.module.scss';
+import classNames from 'classnames';
 
-export const Breadcrumbs = () => (
-  <div className={styles.container}>
-    <Link to="#" className={styles.button_home}></Link>
+type Props = {
+  productName?: string;
+};
 
-    <div className={styles.icon_arrow}></div>
+export const Breadcrumbs: React.FC<Props> = ({ productName }) => {
+  const { pathname } = useLocation();
 
-    <Link
-      to="#"
-      className={`${styles.breadcrumbs_text} ${styles.breadcrumbs_text_link}`}
-    >
-      Phones
-    </Link>
+  const pathSegments = pathname.split('/').slice(1);
 
-    <div className={`${styles.icon_arrow} ${styles.disabled}`}></div>
+  const formatBreadcrumb = (item: string, index: number) => {
+    if (productName && index === pathSegments.length - 1) {
+      return productName;
+    }
 
-    <div className={`${styles.breadcrumbs_text} ${styles.disabled}`}>
-      Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
+    const firstLetter = item[0].toUpperCase();
+    const restLetters = item.slice(1);
+
+    return `${firstLetter}${restLetters}`;
+  };
+
+  return (
+    <div className={styles.container}>
+      <Link to="/" className={styles.button_home}></Link>
+
+      {pathSegments.map((item, index) => (
+        <div className={styles.breadcrumb_container} key={index}>
+          <div className={styles.icon_arrow}></div>
+
+          <Link
+            to={`/${item}`}
+            className={classNames(styles.breadcrumb, {
+              [styles.breadcrumb_current]: index === pathSegments.length - 1,
+            })}
+          >
+            {formatBreadcrumb(item, index)}
+          </Link>
+        </div>
+      ))}
     </div>
-  </div>
-);
+  );
+};

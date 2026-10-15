@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styles from './Slider.module.scss';
 import { useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames';
@@ -44,19 +43,19 @@ export const Slider = () => {
     });
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      nextSlide();
-    }, 5000);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     nextSlide();
+  //   }, 5000);
 
-    return () => clearInterval(intervalId);
-  }, [currentSlide, nextSlide]);
+  //   return () => clearInterval(intervalId);
+  // }, [currentSlide, nextSlide]);
 
   return (
     <div className={styles.container}>
-      <Link to="#" className={styles.button} onClick={previousSlide}>
+      <button className={styles.button} onClick={previousSlide}>
         <div className={styles.icon_arrow}></div>
-      </Link>
+      </button>
 
       <img
         src={slides[currentSlide].image}
@@ -64,19 +63,17 @@ export const Slider = () => {
         className={styles.image}
       />
 
-      <Link
-        to="#"
+      <button
         className={`${styles.button} ${styles.button_r}`}
         onClick={nextSlide}
       >
         <div className={`${styles.icon_arrow} ${styles.icon_arrow_r}`}></div>
-      </Link>
+      </button>
 
       <div className={styles.indicators_wrapper}>
         {slides.map((slide, index) => (
-          <Link
-            to="#"
-            className={styles.indicator_link}
+          <button
+            className={styles.indicator_button}
             key={slide.id}
             onClick={() => setCurrentSlide(index)}
           >
@@ -85,7 +82,7 @@ export const Slider = () => {
                 [styles.indicator_active]: index === currentSlide,
               })}
             ></div>
-          </Link>
+          </button>
         ))}
       </div>
     </div>

@@ -6,25 +6,25 @@ export const Nav = () => (
     <nav className={styles.list_container}>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <Link className={`${styles.link} ${styles.link_active}`} to="#">
+          <Link className={`${styles.link} ${styles.link_active}`} to="/">
             Home
           </Link>
         </li>
 
         <li className={styles.item}>
-          <Link className={styles.link} to="#">
+          <Link className={styles.link} to="phones">
             Phones
           </Link>
         </li>
 
         <li className={styles.item}>
-          <Link className={styles.link} to="#">
+          <Link className={styles.link} to="tablets">
             Tablets
           </Link>
         </li>
 
         <li className={styles.item}>
-          <Link className={styles.link} to="#">
+          <Link className={styles.link} to="accessories">
             Accessories
           </Link>
         </li>

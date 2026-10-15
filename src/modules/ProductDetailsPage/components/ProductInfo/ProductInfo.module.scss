@@ -1,0 +1,172 @@
+.title {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 31px;
+  color: $black-color;
+  margin-bottom: 32px;
+
+  @include content-padding-inline;
+
+  @include on-tablet {
+    font-size: 32px;
+    line-height: 41px;
+    margin-bottom: 40px;
+  }
+}
+
+.wrapper {
+  @include page-grid;
+  @include content-padding-inline;
+
+  margin-bottom: 56px;
+
+  @include on-tablet {
+    row-gap: 64px;
+    margin-bottom: 64px;
+  }
+
+  @include on-desktop {
+    row-gap: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+.options {
+  grid-column: 1 / -1;
+  margin-bottom: 56px;
+
+  @include on-tablet {
+    grid-column: 8 / -1;
+    margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: 7 / -1;
+  }
+
+  @include on-desktop {
+    grid-column: 14 / -1;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-column: 1 / -1;
+  margin-bottom: 56px;
+
+  @include on-tablet {
+    margin: 0;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 12;
+  }
+}
+
+.tech_specs {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    margin: 0;
+  }
+
+  @include on-desktop {
+    grid-column: 14 / -1;
+  }
+}
+
+.text_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small_text {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.options_wrapper {
+  @media (min-width: 1024px) {
+    width: 320px;
+  }
+}
+
+.price_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  color: $black-color;
+}
+
+.price_old {
+  font-size: 22px;
+  line-height: 28px;
+  text-decoration: underline;
+  text-underline-offset: -40%;
+  text-decoration-skip-ink: none;
+}
+
+.product_buttons {
+  margin-bottom: 32px;
+}
+
+.specs_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  &_bottom {
+    margin: 0;
+  }
+}
+
+.spec_value {
+  color: $black-color;
+}
+
+.title_h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: $black-color;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $gray-elements;
+
+  @include on-tablet {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 31px;
+    padding-bottom: 16px;
+  }
+
+  &_specs {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.title_h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $black-color;
+  margin-bottom: 16px;
+
+  @include on-tablet {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

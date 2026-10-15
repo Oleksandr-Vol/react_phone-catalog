@@ -16,78 +16,57 @@
   }
 }
 
-.sort_container {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
+.loader {
+  margin-top: 50px;
+
+  @include on-tablet {
+    margin-top: 120px;
+  }
+
+  @include on-desktop {
+    margin-top: 50px;
+  }
 }
 
-.select_name {
-  font-size: 12px;
+.error_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.system_message {
   font-weight: 700;
-  line-height: 15px;
-  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  color: $black-color;
+  margin-bottom: 16px;
+  text-align: center;
+
+  @include on-tablet {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.error_button {
+  @include blue-buttons;
+
+  width: 120px;
+  height: 40px;
+
+
+  @include on-tablet {
+    width: 150px;
+    height: 48px;
+  }
 }
 
 .cards {
   @include cards-container;
-  
+
   margin-bottom: 24px;
 
   @include on-tablet {
     margin-bottom: 40px;
-  }
-}
-
-.pagination_container {
-  display: flex;
-  justify-content: center;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  width: 248px;
-}
-
-.button_arrow {
-  @include button-arrow;
-
-  transform: rotate(180deg);
-
-  &_disabled {
-    background-image: url(/public/img/buttons/button_arrow-disabled.svg);
-    pointer-events: none;
-  }
-
-  &_right {
-    transform: initial;
-  }
-}
-
-.pagination_numbers {
-  display: flex;
-  gap: 8px;
-}
-
-.button_number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid $gray-elements;
-  border-radius: 50%;
-  color: black;
-  text-decoration: none;
-
-  &:hover {
-    border-color: $black-color;
-  }
-
-  &_active {
-    background-color: $black-color;
-    color: white;
-    border-color: $black-color;
   }
 }

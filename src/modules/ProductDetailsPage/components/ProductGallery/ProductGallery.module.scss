@@ -1,0 +1,105 @@
+.container {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @include on-tablet {
+    grid-column: 1 / 8;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: 1 / 7;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 14;
+  }
+}
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.image {
+  height: 288px;
+  margin-bottom: 16px;
+
+  &_phones_tablets {
+    @media (min-width: 768px) {
+      height: 375px;
+    }
+  }
+
+  @include on-desktop {
+    height: 464px;
+
+    &_accessories {
+      height: 375px;
+    }
+  }
+}
+
+.preview {
+  display: flex;
+  gap: 8px;
+
+  @include on-tablet {
+    flex-direction: column;
+  }
+
+  @include on-desktop {
+    gap: 16px;
+  }
+
+
+  &_image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 49px;
+    width: 51px;
+    border: 1px solid $gray-elements;
+    border-radius: 4px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+
+    @include on-tablet {
+      width: 35px;
+      height: 35px;
+    }
+
+    &_active {
+      border-color: $black-color;
+    }
+
+    @include on-desktop {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+    }
+  }
+
+  &_image {
+    height: 40px;
+
+    @include on-tablet {
+      height: 29px;
+    }
+
+    @include on-desktop {
+      height: 66px;
+    }
+  }
+}

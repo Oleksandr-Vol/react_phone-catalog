@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  margin-bottom: 4px;
+}
+
+.select {
+  width: 136px;
+  height: 40px;
+  border: 1px solid $gray-icons;
+  border-radius: 8px;
+  padding-inline: 12px;
+  font-weight: 700;
+  color: $black-color;
+  appearance: none;
+  background: url(/public/img/icons/arrow-down.svg) no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #89939a;
+  }
+
+  &:focus {
+    border: 1px solid $black-color;
+  }
+
+  &_sort {
+    @include on-tablet {
+      width: 176px;
+    }
+  }
+}
