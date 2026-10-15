@@ -16,7 +16,7 @@ export const ProductGallery: React.FC<Props> = ({
     <div className={styles.container}>
       <div className={styles.image_container}>
         <img
-          src={`/public/${images[currentImage]}`}
+          src={`${images[currentImage]}`}
           alt={name}
           className={classNames(styles.image, {
             [styles.image_phones_tablets]: ['phones', 'tablets'].includes(
@@ -36,11 +36,7 @@ export const ProductGallery: React.FC<Props> = ({
             })}
             onClick={() => setCurrentImage(index)}
           >
-            <img
-              src={`/public/${image}`}
-              alt={name}
-              className={styles.preview_image}
-            />
+            <img src={`${image}`} alt={name} className={styles.preview_image} />
           </button>
         ))}
       </div>

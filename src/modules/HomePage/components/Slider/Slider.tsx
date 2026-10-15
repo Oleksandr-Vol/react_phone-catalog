@@ -43,13 +43,13 @@ export const Slider = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     nextSlide();
-  //   }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 5000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [currentSlide, nextSlide]);
+    return () => clearInterval(intervalId);
+  }, [currentSlide, nextSlide]);
 
   return (
     <div className={styles.container}>
